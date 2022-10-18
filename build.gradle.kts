@@ -1,6 +1,8 @@
 val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
+val koin_version: String by project
+
 
 plugins {
     application
@@ -34,6 +36,24 @@ dependencies {
     implementation("io.ktor:ktor-server-status-pages-jvm:$ktor_version")
     implementation("io.ktor:ktor-server-netty-jvm:$ktor_version")
     implementation("ch.qos.logback:logback-classic:$logback_version")
+
+    // db
+    implementation ("org.jetbrains.exposed:exposed-core:0.35.1")
+    implementation ("org.jetbrains.exposed:exposed-dao:0.35.1")
+    implementation ("org.jetbrains.exposed:exposed-jdbc:0.35.1")
+    implementation ("org.postgresql:postgresql:42.2.2")
+    implementation ("com.zaxxer:HikariCP:3.4.2")
+
+    // crypt
+    implementation ("org.mindrot:jbcrypt:0.4")
+
+
+    // Koin for Ktor
+    implementation ("io.insert-koin:koin-ktor:$koin_version")
+// SLF4J Logger
+    implementation ("io.insert-koin:koin-logger-slf4j:$koin_version")
+
+    // Testing
     testImplementation("io.ktor:ktor-server-tests-jvm:$ktor_version")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
 }
