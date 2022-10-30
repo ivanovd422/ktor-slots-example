@@ -1,7 +1,7 @@
 package com.example.base
 import com.example.db.DatabaseProviderContract
-import org.koin.core.KoinComponent
-import org.koin.core.inject
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 
 abstract class BaseController : KoinComponent {
 

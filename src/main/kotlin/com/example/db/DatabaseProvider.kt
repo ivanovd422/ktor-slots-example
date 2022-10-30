@@ -9,12 +9,11 @@ import kotlinx.coroutines.withContext
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.transaction
-import org.koin.core.KoinComponent
-import org.koin.core.inject
+import org.koin.core.component.KoinComponent
+import org.koin.core.component.inject
 import kotlin.coroutines.CoroutineContext
 
 
-@OptIn(ObsoleteCoroutinesApi::class)
 class DatabaseProvider : DatabaseProviderContract, KoinComponent {
 
     private val config by inject<Config>()
